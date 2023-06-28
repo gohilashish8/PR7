@@ -42,17 +42,23 @@ function App() {
       setIsUpdate(false);
       setUpdateIndex(null);
     } else {
-      setAllRecords([
-        ...allRecords,
-        {
-          id: uuidv4().slice(0, 4),
-          fullName: data.fullName,
-          number: data.number,
-          email: data.email,
-          textarea: data.textarea,
-          age: data.age,
-        },
-      ]);
+      console.log();
+      if(data.fullName=== "" && data.number=== "" && data.email=== "" && data.textarea=== "" && data.age=== ""  ){
+        alert("Please fill the form");
+      } 
+      else{
+        setAllRecords([
+          ...allRecords,
+          {
+            id: uuidv4().slice(0, 4),
+            fullName: data.fullName,
+            number: data.number,
+            email: data.email,
+            textarea: data.textarea,
+            age: data.age,
+          },
+        ]);
+      }
     }
 
     setData({
@@ -205,7 +211,7 @@ function App() {
           </table>
         )}
         {allRecords.length === 0 && (
-          <p className="text-center">No records found.</p>
+          <p className="text-center bg-white py-2">No records found.</p>
         )}
       </div>
     </>
