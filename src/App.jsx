@@ -43,7 +43,7 @@ function App() {
       setUpdateIndex(null);
     } else {
       console.log();
-      if(data.fullName=== "" && data.number=== "" && data.email=== "" && data.textarea=== "" && data.age=== ""  ){
+      if(data.fullName=== "" && data.number=== "" && data.email=== ""  && data.age=== ""  ){
         alert("Please fill the form");
       } 
       else{
